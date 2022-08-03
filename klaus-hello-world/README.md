@@ -61,6 +61,15 @@ eval $(minikube docker-env)
   minikube tunnel
 ```
 
+add to /etc/hosts
+
+```sh
+echo "192.168.64.3  hello-world.info" | sudo tee -a /etc/hosts
+```
+
+curl hello-world.info
+curl hello-world.info/2
+
 ```sh
 curl http://<EXTERNAL-IP>:<PORT>
   ex. http://10.101.208.96:8080/ - okiok

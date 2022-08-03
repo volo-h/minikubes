@@ -12,21 +12,31 @@ minikube service klaus-hello-world --url
 ```
 
 ### delete if need
+```sh
   kubectl delete deployment klaus-hello-world 
   kubectl delete svc klaus-hello-world
+```
 
 ### statistic, working okiok
-kubectl get deployments | grep klaus-hello-world
+```sh
+  kubectl get deployments | grep klaus-hello-world
+```
   klaus-hello-world   2/2     2            2           14m
 
-kubectl get svc | grep klaus-hello-world
+```sh
+  kubectl get svc | grep klaus-hello-world
+```
   klaus-hello-world      NodePort    10.96.159.164    <none>        8080:30108/TCP   99s
 
-minikube service klaus-hello-world --url
+```sh
+  minikube service klaus-hello-world --url
+```
   http://192.168.64.3:30108
 
 #### show existing endpoints of service klaus-hello-world
-kubectl get endpoints | grep klaus-hello-world
+```sh
+  kubectl get endpoints | grep klaus-hello-world
+```
   klaus-hello-world      172.17.0.2:8080,172.17.0.3:8080   27s
 
 request from IP in browser -> (port of "NodePort" service)
@@ -34,9 +44,13 @@ or by curl
 
 ex.:
 
-curl http://192.168.64.3:32036
+```sh
+  curl http://192.168.64.3:32036
+```
   Hello Klaus!!%
 
-kubectl get nodes -o wide
+```sh
+  kubectl get nodes -o wide
+```
 
 deployment.yaml + expose deployment with NodePort and at all !
