@@ -12,8 +12,13 @@
 
 ####
 ```sh
-  kubectl apply -f service.yaml
-  kubectl apply -f ingress.yaml
+  kubectl apply -f ./k8s2/service.yaml
+  kubectl apply -f ./k8s2/ingress.yaml
+```
+
+#### start web ui
+```
+  minikube dashboard
 ```
 
 Access over http://192.168.64.3/ crashed by 404 Not Found

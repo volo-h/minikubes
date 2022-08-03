@@ -2,7 +2,7 @@
 #### how to
 
 ```sh
-kubectl apply -f k8s2/deployment.yaml
+kubectl apply -f k8s1/deployment.yaml
   kubectl get deployment
 
 kubectl expose deployment klaus-hello-world --type=NodePort --port=8080
