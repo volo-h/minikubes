@@ -41,39 +41,23 @@ eval $(minikube docker-env)
 ##### https://medium.com/@rakateja/deploying-go-app-on-minikube-using-local-docker-image-81dad14dc7bd
 
 ```sh
-  kubectl apply -f k8s/deployment.yaml
+
   kubectl get pods
+    kubectl logs klaus-hello-world-deployment-58cdd589ff-xp9qh
   kubectl get deployment klaus-hello-world
-  kubectl expose deployment klaus-hello-world --type=LoadBalancer --name=klaus-hello-world-service
   kubectl get services klaus-hello-world-service
   kubectl describe services klaus-hello-world-service
-
   kubectl get po --all-namespaces
-
   kubectl get pod -n kube-system
-
   kubectl config view
 ```
 
-##### https://minikube.sigs.k8s.io/docs/handbook/accessing/#using-minikube-tunnel
-
+#### show all events that happened
 ```sh
-  minikube tunnel
+  kubectl get events
 ```
 
-add to /etc/hosts
-
-```sh
-echo "192.168.64.3  hello-world.info" | sudo tee -a /etc/hosts
-```
-
-curl hello-world.info
-curl hello-world.info/2
-
-```sh
-curl http://<EXTERNAL-IP>:<PORT>
-  ex. http://10.101.208.96:8080/ - okiok
-```
+### https://kubernetes.io/ru/docs/reference/kubectl/cheatsheet/
 
 **four types of service in Kubernetes.** https://stackoverflow.com/questions/44110876/kubernetes-service-external-ip-pending
 

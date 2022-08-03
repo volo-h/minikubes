@@ -21,6 +21,25 @@
   ✗ kubectl apply -f k8s2
 ```
 
+#### get real ip of minikube; that ip we sill add to /etc/hosts
+```sh
+  minikube ip
+```
+
+add to /etc/hosts
+
+```sh
+echo "192.168.64.3  hello-world.info" | sudo tee -a /etc/hosts
+```
+
+curl hello-world.info
+curl hello-world.info/2
+
+```sh
+curl http://<EXTERNAL-IP>:<PORT>
+  ex. http://10.101.208.96:8080/ - okiok
+```
+
 #### start web ui
 ```
   minikube dashboard
@@ -36,3 +55,20 @@ or
 Hello Klaus!!%
 
 woks great
+
+#### if you need investigate occured errors
+```sh
+  kubectl describe pods klaus-hello-world
+  kubectl describe ing
+  kubectl describe svc klaus-hello-world
+```
+
+#### https://minikube.sigs.k8s.io/docs/commands/service/
+Lists the URLs for the services in your local cluster
+```sh
+minikube service list
+```
+
+#### how to with ingress
+#### from https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/
+https://kubernetes.io/ru/docs/tutorials/hello-minikube/
