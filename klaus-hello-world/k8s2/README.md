@@ -16,6 +16,11 @@
   kubectl apply -f ./k8s2/ingress.yaml
 ```
 
+#### apply all in one command
+```sh
+  ✗ kubectl apply -f k8s2
+```
+
 #### start web ui
 ```
   minikube dashboard
