@@ -68,3 +68,7 @@ eval $(minikube docker-env)
 3. LoadBalancer - Exposes the Service externally using a cloud provider's load balancer.
 
 4. ExternalName - Maps the Service to the contents of the externalName field (e.g. foo.bar.example.com), by returning a CNAME record with its value. No proxying of any kind is set up.
+
+
+#### base minimal k8s schema; created by https://excalidraw.com/
+![My Image](ex/base_k8s.png)
