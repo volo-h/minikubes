@@ -72,3 +72,17 @@ minikube service list
 #### how to with ingress
 #### from https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/
 https://kubernetes.io/ru/docs/tutorials/hello-minikube/
+
+```sh
+  cd mysql
+  ✗ kubectl apply -f mysql-pv.yaml
+  ✗ kubectl apply -f mysql-deployment.yaml
+  ✗ kubectl describe deployment mysql
+  ✗ kubectl get pods -l app=mysql
+  ✗ kubectl describe pvc mysql-pv-claim
+  ✗ kubectl run -it --rm --image=mysql:8.0 --restart=Never mysql-client -- mysql -h mysql -ppassword
+```
+https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/
+
+
+

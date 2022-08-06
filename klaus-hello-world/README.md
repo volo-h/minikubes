@@ -69,6 +69,29 @@ eval $(minikube docker-env)
 
 4. ExternalName - Maps the Service to the contents of the externalName field (e.g. foo.bar.example.com), by returning a CNAME record with its value. No proxying of any kind is set up.
 
+#### inside pod, show existing variables
+```sh
+  env
+```
+
+####
+```sh
+  minikube ssh
+  cd /var/lib/kubelet/pods/
+  ls -la # will see ids - ids of existing pods
+
+  # where is config map file?
+  ls -la /var/lib/kubelet/pods/<image-ids>/volumes/kubernetes.io~configmap/kube-proxy/config.conf
+
+  echo $Count  # show value of env Count inside of Pod
+```
+
+
+echo -n "now-go-2-home" | base64 
+echo -n "bm93LWdvLTItaG9tZQo=" | base64 -d
+  есть кодировка и декодировка
+  есть шифрование
+
 
 #### base minimal k8s schema; created by https://excalidraw.com/
 ![My Image](ex/base_k8s.png)
